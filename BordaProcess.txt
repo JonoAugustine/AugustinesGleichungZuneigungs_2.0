@@ -25,6 +25,6 @@ Candidate borda's---------
 1. The user is repeatedly asked to select which of the candidates' features is most optimal
 in the following patter:
 	-. The user is shown a training screen, explaining what the next steps are
-	A. The user is presented with two features side by side
-	B. The user then selects which feature is 
-
+	A. The user is presented with two features side by side in the context of one candidate
+	B. The user then selects which feature is better, in context of the current candidate
+	C. The selected feature is given a point
