@@ -1,0 +1,21 @@
+Overall action
+	1. Button clicked
+	2. Weight of the target index increased
+	3. Indexess increased
+	4. Indexes checked against array length and reset if too large
+	5. new names displayed or calibration ends
+
+1. Button Clicked
+
+2. Weight of target increased
+
+-First round
+	3. Indexes increase/reset
+
+	4
+-Rematch
+	3. Rematch checked
+	
+	4. change indecies
+	
+	5. Calibration end
