@@ -1,0 +1,19 @@
+find the lowest value
+save it
+change that array value to 1
+find the next lowest increasing by 1 each check
+compare to the previous
+subtract and set
+save new value
+
+float prev = weights[0];
+
+for(int i=0; i < weight.length; i++){
+
+	if(weights[i] < prev) prev = weights[i];
+}
+
+for(int checked=0; checked < weights.length;){
+
+	
+}
