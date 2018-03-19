@@ -5,6 +5,7 @@
 -----------------------------------------------------------------------------
 
 Roadmap:
+
 	- Negative traits
 		In SB's current state, features cannot be discerned between the type of effect they
 		produce, only the magnitude. However, human opinions are not all of the same quality,
