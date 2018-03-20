@@ -41,8 +41,8 @@ Roadmap:
 List of known bugs
 
 	Borda:
-		- ~~A borda of 2 candidates and 2 features will result in a 100% and a ~90%
-			for candidates that should have a score of zero.~~
+		- ~~A borda of 2 candidates and 2 features will result in a 100% and a ~90%~~
+			~~for candidates that should have a score of zero.~~
 		
 	
 	UI:
