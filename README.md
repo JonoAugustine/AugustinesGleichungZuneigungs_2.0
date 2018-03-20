@@ -7,6 +7,18 @@
 
 Roadmap:
 
+	- Possible Redesign of CAndidate Range Calculation
+		+ In its current state (3/20.32a1ea8), SB calculates the possible range of candidate scores once
+		  all features and candidates have gone through their bordas.
+		+ It works by sorting the features & their respective weights, then multiuplying through
+		  the min candidate-feature score to the max by their respective weight. However, it
+		  is now apparent that the method of itteratting by one each time through the candidate
+		  scores might not be the right way.
+		  In Theory, the candidate-feature scores should never be more than +/- 1 unit from the 
+		  feature below and or above it in the array. That is why It has been working. However, while
+		  attemptint to implement Negative Traits appraoch B, the min has been calculated incorreclty.
+		  The current method of iterating from in to max by 1 and multiplying may be the culprit.
+		  Tests will now be performed to determine if this is the source of the problem.
 	- Negative traits
 		In SB's current state, features cannot be discerned between the type of effect they
 		produce, only the magnitude. However, human opinions are not all of the same quality,
