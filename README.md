@@ -32,8 +32,8 @@ Roadmap:
 			+ A new feature list of negative features will be added to feature setup
 			+ On the confirmation of features & candidates. Feature weights will be added
 			  in value according to the feature's negativity.
-			+ On calibration and Candidate Borda (CnB), the feature will be increased regardless of negativity.
-			  Then multiplied by the feature's negativity int.
+			+ On calibration and Candidate Borda (CnB), the feature will be increased regardless 
+			  of negativity, then multiplied by the feature's negativity int.
 			+ The rest of the code should be able to stay the same (cf)
 			
 
