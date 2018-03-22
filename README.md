@@ -19,6 +19,11 @@ Roadmap:
 		  attemptint to implement Negative Traits appraoch B, the min has been calculated incorreclty.
 		  The current method of iterating from in to max by 1 and multiplying may be the culprit.
 		  Tests will now be performed to determine if this is the source of the problem.
+		  
+		- Attempt A:
+			Since it is still possible to obtain scores that are not consecutive, we can iterrate
+			through the candidates and add each score to a temp array (no repeates), sorting them puon addition,
+			then use that array to calculate max and min scores.
 	- Negative traits
 		In SB's current state, features cannot be discerned between the type of effect they
 		produce, only the magnitude. However, human opinions are not all of the same quality,
