@@ -5,7 +5,7 @@
 
 -----------------------------------------------------------------------------
 
-Roadmap:
+**Roadmap:**
 
 	- Possible Redesign of CAndidate Range Calculation
 		+ In its current state (3/20.32a1ea8), SB calculates the possible range of candidate scores once
@@ -24,6 +24,7 @@ Roadmap:
 			Since it is still possible to obtain scores that are not consecutive, we can iterrate
 			through the candidates and add each score to a temp array (no repeates), sorting them puon addition,
 			then use that array to calculate max and min scores.
+			
 	- Negative traits
 		In SB's current state, features cannot be discerned between the type of effect they
 		produce, only the magnitude. However, human opinions are not all of the same quality,
@@ -54,9 +55,19 @@ Roadmap:
 			  of negativity, then multiplied by the feature's negativity int.
 			+ The rest of the code should be able to stay the same (cf)
 			
+	- Candidate-specific Features
+		+ In AGZ_1, and (as of) AGZ_2.0.72d634d, the inability to compare candidates that do not share
+		  all of their features has been a limitation on the variaty of candidates that can be compared.
+		  Expanding how AGZ understands candidates may be an interesting path to take. To be more specific,
+		  adding the ability to calibrate from a single pool of features, while 
+		+ A possible complication with this expansion would involve a fundimental change to how bordas are
+		  run in AGZ's code. If all features are calibrated within the same array (*feature weights* in Pii),
+		  then making candidates with only some features will make issues while calculations for candidate borda
+		  and min-max score range
+		  
 
 
-List of known bugs
+***List of known bugs***
 
 	Borda:
 		~~ A borda of 2 candidates and 2 features will result in a 100% and a ~90%~~
@@ -65,3 +76,22 @@ List of known bugs
 	
 	UI:
 		- Log Viewer scroll box does not scroll to fit expanded log entries
+
+
+-----------------------------------------------------------------------------
+
+**Candidates**
+
+	Candidates are the object of your indecision. Whether they are people, watches, clothes, insurance plans, or
+	quite literally anything else. AGZ's purpose is to aid you in understanding how you feel about about
+	these candidates. Candidates consist of a name, score, and set of features.
+
+**Features:**
+
+	Features are aspects of candidates that help AGZ understand what is most important to you. Features can be
+	anything from *red* to *votes for president of space* to *likes kittens*; as long as it describes some aspect
+	of a candidate, it's a valid feature. In AGZ_2.0.72d634d, Features consist of a name and score. The score of each
+	feature fits
+
+**Bordas:**
+
