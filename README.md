@@ -22,8 +22,8 @@
 		  
 		- Attempt A:
 			Since it is still possible to obtain scores that are not consecutive, we can iterrate
-			through the candidates and add each score to a temp array (no repeates), sorting them puon addition,
-			then use that array to calculate max and min scores.
+			through the candidates and add each score to a temp array (no repeates), sorting them upon
+			addition, then use that array to calculate max and min scores.
 			
 	- Negative traits
 		In SB's current state, features cannot be discerned between the type of effect they
@@ -62,8 +62,8 @@
 		  adding the ability to calibrate from a single pool of features, while 
 		+ A possible complication with this expansion would involve a fundimental change to how bordas are
 		  run in AGZ's code. If all features are calibrated within the same array (*feature weights* in Pii),
-		  then making candidates with only some features will make issues while calculations for candidate borda
-		  and min-max score range
+		  then making candidates with only some features will make issues while calculations for candidate
+		  borda and min-max score range
 		  
 
 
