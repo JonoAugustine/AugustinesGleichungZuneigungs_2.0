@@ -20,6 +20,8 @@
 		  attemptint to implement Negative Traits appraoch B, the min has been calculated incorreclty.
 		  The current method of iterating from in to max by 1 and multiplying may be the culprit.
 		  Tests will now be performed to determine if this is the source of the problem.
+	+ **NOTE** that with the addition of negative features, feature weights are no longer consecutive.
+		However, since weights are universal across all candidates, this should not matter.
 		  
 	- Attempt A:
 		 + Since it is still possible to obtain scores that are not consecutive, we can iterrate
