@@ -1,4 +1,5 @@
 
+
 # AugustinesGleichungZuneigungs_2.0
 
 **The second attempt at creating the ultimate decision making tool for the troubled mind**
@@ -78,6 +79,14 @@
 	- Log Viewer scroll box does not scroll to fit expanded log entries
 
 
+**Changelog**
+
+3/24/18
+- Possibly fixed a major bug/misimplementation of Cn score range calculation. In the Pii function *CalcCandidateScoreRange*, when calculating the *minimum* score, iterates forwards through the (temporarily) sorted *featureWeights* array. 
+	- **2.0.02add04 and earlier** On each iteration a *min-temp* was multiplied by the loop's current weight, then the min-temp was incremented by 1. Although it seemed to be implemented correctly, this method caused constant miscalculations of the Cn score range minimum. 
+	- **As of 2.0.508dd9c**  The min-temp in the Cn score range minimum's calculation was changed to the max-temp (along with a decrement each iteration instead of increment). This appears to produce correct calculations of the Cn score minimum.
+
+
 -----------------------------------------------------------------------------
 
 **Candidates: the object of your indecision**
@@ -92,3 +101,11 @@ to aid you in understanding how you feel about about these candidates.
 
 **Bordas: The solution**
 -  _
+
+-----------
+
+**Random terminology**
+- Pii = Program Info Instance
+- Cn = Candidate
+- F, Feat, Ft = Feature
+- Version numbers are followed by commit IDs. e.g. 2.0.508dd9c
