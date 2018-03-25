@@ -1,14 +1,14 @@
-
-
-# AugustinesGleichungZuneigungs_2.0
+# Augustines Gleichung Zuneigungs 2.0
 
 **The second attempt at creating the ultimate decision making tool for the troubled mind**
-*Now using Unreal Engine 4 as a base to build instead of pure Java*
+
+*Using Unreal Engine 4 as a base to build instead of Java*
 
 -----------------------------------------
+----------------
 
 **Roadmap:**
-
+---------
 - Possible Redesign of Candidate Range Calculation
 	+ In its current state (3/20.32a1ea8), SB calculates the possible range of candidate scores once
 		  all features and candidates have gone through their bordas.
@@ -24,7 +24,7 @@
 	+ **NOTE** that with the addition of negative features, feature weights are no longer consecutive.
 		However, since weights are universal across all candidates, this should not matter.
 		  
-	- Attempt A:
+	- Approach A:
 		 + Since it is still possible to obtain scores that are not consecutive, we can iterrate
 			through the candidates and add each score to a temp array (no repeates), sorting them upon
 			addition, then use that array to calculate max and min scores.
@@ -67,26 +67,26 @@
 	-	A possible complication with this expansion would involve a fundimental change to how bordas are
 		  run in AGZ's code. If all features are calibrated within the same array (*feature weights* in Pii),
 		  then making candidates with only some features will make issues while calculations for candidate
-		  borda and min-max score range
-		  
-
+		  borda and min-max score range.
+	- One way around this would be to set any of these (let's call them) "*null*" Cn-features to 0 within the respective candidate. This brings into question the meaning of a "0" score feature.
+		- Prior to negative features, a feature of score 0 would mean it was poor, since a potentially high weight was zeroed out. 
+		- Since the introduction of negative features, a Cn-feature score of 0 could equally zero out a negative weight as a positive one, so (hypothetically) it should be more of a balanced influence.
+		- However the question remains: *should candidates without a certain feature be judged on the same scale as those with said feature, regardless of negativity?*		  
 
 ***List of known bugs***
-- Borda:
-	- ~~A borda of 2 candidates and 2 features will result in a 100% and a ~90%  for candidates that should have a score of zero.~~
-		
+-----		
 - UI:
 	- Log Viewer scroll box does not scroll to fit expanded log entries
 
-
 **Changelog**
-
+--
 3/24/18
 - Possibly fixed a major bug/misimplementation of Cn score range calculation. In the Pii function *CalcCandidateScoreRange*, when calculating the *minimum* score, iterates forwards through the (temporarily) sorted *featureWeights* array. 
 	- **2.0.02add04 and earlier** On each iteration a *min-temp* was multiplied by the loop's current weight, then the min-temp was incremented by 1. Although it seemed to be implemented correctly, this method caused constant miscalculations of the Cn score range minimum. 
 	- **As of 2.0.508dd9c**  The min-temp in the Cn score range minimum's calculation was changed to the max-temp (along with a decrement each iteration instead of increment). This appears to produce correct calculations of the Cn score minimum.
 
 
+Definitions
 -----------------------------------------------------------------------------
 
 **Candidates: the object of your indecision**
@@ -97,14 +97,13 @@ to aid you in understanding how you feel about about these candidates.
 
 **Features: aspects of candidates**
 - Features help AGZ understand what is most important to you. They can be anything from "*red*" to "*votes for president of space*" to *likes kittens*; as long as it describes some aspect of a candidate, it's a valid feature. 
-- In AGZ_2.0.72d634d, Features consist of a name and score and a weight (not within the struct as of 2.0.72d634d)
+- Features consist of a name, score, and negativity (+-1)
 
 **Bordas: The solution**
 -  _
 
------------
-
 **Random terminology**
+----
 - Pii = Program Info Instance
 - Cn = Candidate
 - F, Feat, Ft = Feature
