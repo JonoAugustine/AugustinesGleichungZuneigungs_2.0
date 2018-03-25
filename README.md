@@ -71,7 +71,16 @@
 	- One way around this would be to set any of these (let's call them) "*null*" Cn-features to 0 within the respective candidate. This brings into question the meaning of a "0" score feature.
 		- Prior to negative features, a feature of score 0 would mean it was poor, since a potentially high weight was zeroed out. 
 		- Since the introduction of negative features, a Cn-feature score of 0 could equally zero out a negative weight as a positive one, so (hypothetically) it should be more of a balanced influence.
-		- However the question remains: *should candidates without a certain feature be judged on the same scale as those with said feature, regardless of negativity?*		  
+		- However the question remains: *should candidates without a certain feature be judged on the same scale as those with said feature, regardless of negativity?*
+			- Consider this scenario:
+				- 2 candidates: Phone & Computer
+				- List some descriptive features of either: 
+					- Phone calls, video editing, steam games, texting, portability
+				- Let's assume you don't have some program that lets you make calls or text from a computer. Clearly, phone calls and texting will be at the bottom of the borda ranking for the Computer, so far down in fact, they should be considered automatic zeros (hint hint). Similarly, you wont be playing any steam games or doing heavy video editing on the phone, so those can also be automatic zeros. Portability, on the third hand, easily fits into both candidates feature box. 
+				- Calibrating the entire set of features, regardless of where they will apply later on, and then giving bordas for the 2 Cn, should give appropriate scoring in the final calculations.
+				- **A possible issue with this example** would be the range calculations. How would the range be interpreted if the perfect candidate would have features that span across the features that do not go into both boxes and therefore "cannot" exist?
+			- Consider this scenario
+				- 2 candidates: Computer & New Counter-top
 
 ***List of known bugs***
 -----		
