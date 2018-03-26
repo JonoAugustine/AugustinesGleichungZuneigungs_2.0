@@ -63,7 +63,7 @@
 	-	In AGZ_1, and (as of) AGZ_2.0.72d634d, the inability to compare candidates that do not share
 		  all of their features has been a limitation on the variaty of candidates that can be compared.
 		  Expanding how AGZ understands candidates may be an interesting path to take. To be more specific,
-		  adding the ability to calibrate from a single pool of features, while 
+		  adding the ability to calibrate from a single pool of features and have Candidates draw some (*but not necessarily 				all*) features from that pool.
 	-	A possible complication with this expansion would involve a fundimental change to how bordas are
 		  run in AGZ's code. If all features are calibrated within the same array (*feature weights* in Pii),
 		  then making candidates with only some features will make issues while calculations for candidate
@@ -109,7 +109,7 @@ to aid you in understanding how you feel about about these candidates.
 - Features consist of a name, score, and negativity (+-1)
 
 **Bordas: The solution**
--  _
+- The Borda is the system by which Features and Candidates are scored and ranked against each other. A series of binary choices that help the program (as well as the user) understand where Features & Candidates stand in respect to each other. By presenting only two options in each comparison, the Borda is able to remove much of the overwhelming and confusing aspects of comparing and ranking several choices at once.
 
 **Random terminology**
 ----
