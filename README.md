@@ -84,15 +84,22 @@
 
 ***List of known bugs***
 -----		
+- Pii
+	- & UI: *findCandidate* (Pii) is not locating candidates when requested by *UI CandidateSetup* 
+
 - UI:
 	- Log Viewer scroll box does not scroll to fit expanded log entries
 
-**Changelog**
+**log**
 --
 3/24/18
 - Possibly fixed a major bug/misimplementation of Cn score range calculation. In the Pii function *CalcCandidateScoreRange*, when calculating the *minimum* score, iterates forwards through the (temporarily) sorted *featureWeights* array. 
 	- **2.0.02add04 and earlier** On each iteration a *min-temp* was multiplied by the loop's current weight, then the min-temp was incremented by 1. Although it seemed to be implemented correctly, this method caused constant miscalculations of the Cn score range minimum. 
 	- **As of 2.0.508dd9c**  The min-temp in the Cn score range minimum's calculation was changed to the max-temp (along with a decrement each iteration instead of increment). This appears to produce correct calculations of the Cn score minimum.
+
+3/26/18
+- Merged Negative Feature approach B (+-1) int. Having the +-1 was much more convinient than having a boolean and converting that bool to an int would take an extra function.
+- BUG 2 feature 2 candidate bordas mismatch the features and weights. Has happened 1/2 trials (one accidental, 1 failed replication)
 
 
 Definitions
